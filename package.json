@@ -1,0 +1,18 @@
+{
+  "name": "pingroom-starter-room-action-runner",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Run a fixed local report when a trusted teammate presses a PingRoom quick action.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "connect": "node src/connect.js",
+    "inspect": "node src/inspect.js",
+    "start": "node src/main.js",
+    "demo": "node src/demo.js",
+    "test": "node --test"
+  },
+  "dependencies": { "@pingroom/sdk": "0.7.0" },
+  "license": "MIT",
+  "repository": { "type": "git", "url": "https://github.com/pingroom/starter-room-action-runner.git" }
+}

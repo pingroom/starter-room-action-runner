@@ -1,0 +1,6 @@
+[
+  { "id": "order-101", "total_cents": 1250 },
+  { "id": "order-102", "total_cents": 2900 },
+  { "id": "order-103", "total_cents": 875 },
+  { "id": "order-104", "total_cents": 4100 }
+]
