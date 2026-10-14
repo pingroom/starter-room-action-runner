@@ -29,7 +29,9 @@ export async function loadConnection(directory = stateDirectory, env = process.e
     || typeof connection.room !== 'string' || !/^[A-Za-z0-9_-]{1,128}$/.test(connection.room)) {
     throw new Error('Run npm run connect, or set both PINGROOM_TOKEN and PINGROOM_ROOM.');
   }
-  return { token: connection.token, room: connection.room };
+  // Invite codes are stored uppercase. The API accepts any case, but the wait
+  // feed reports the stored code, so a lowercase setting would never match.
+  return { token: connection.token, room: connection.room.toUpperCase() };
 }
 
 export function loadPolicy(room, env = process.env) {
@@ -38,5 +40,5 @@ export function loadPolicy(room, env = process.env) {
   if (!UUID.test(senderId ?? '') || !Number.isInteger(actionNumber) || actionNumber < 1 || actionNumber > 16) {
     throw new Error('Set PINGROOM_TRUSTED_SENDER_ID from npm run inspect and PINGROOM_ACTION_NUMBER to an existing slot (1–16).');
   }
-  return { room, senderId, actionNumber };
+  return { room: typeof room === 'string' ? room.toUpperCase() : room, senderId, actionNumber };
 }
