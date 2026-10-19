@@ -111,4 +111,4 @@ durable idempotency mechanism.
 [Job progress starter](https://github.com/pingroom/starter-job-progress) ·
 [Human review starter](https://github.com/pingroom/starter-human-review)
 
-MIT licensed. SDK 0.7.0 is pinned. CI runs credential-free tests and the demo on Node 22 and 24.
+MIT licensed. SDK 0.7.1 is pinned. CI runs credential-free tests and the demo on Node 22 and 24.
